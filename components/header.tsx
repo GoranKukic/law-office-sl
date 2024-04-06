@@ -82,10 +82,10 @@ export default function Header() {
         {/* Desktop nav */}
         <NavDesktop navbar={navbar} setNavbar={setNavbar} />
 
-
         {/* Language switcher */}
         <div className="justify-center items-center hidden lg:flex">
-          <LanguageSwitcher ariaId="language-switcher" id="navbar" />
+          {/* <LanguageSwitcher ariaId="language-switcher" id="navbar" /> */}
+          <LanguageSwitcher  />
         </div>
 
         {/* hamburger button */}

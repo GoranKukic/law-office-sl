@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Prata&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Language Switcher */
+
+.inputWrapper div:before {
+  content: none;
+}
+
+.inputWrapper div:after {
+  @apply border-b-0;
+}
+
+.inputWrapper div {
+  outline: "none";
+  background: transparent;
+  margin: 0 0 0 auto;
+}
+
+.inputWrapper div:focus {
+  outline: "none";
+  background: transparent;
+}
+
+.inputWrapper div {
+  @apply text-goldBg;
+}
+
+.inputWrapper svg path {
+  @apply fill-goldBg;
+}
+
+/* Intro Headline */
+
+@media only screen and (min-width: 900px) {
+  .heroHeadline {
+    text-align-last: justify;
+    font-size: 76px;
+  }
+}
+
+@media only screen and (max-width: 899px) {
+  .heroHeadline {
+    text-align: center;
+    font-size: 52px;
+  }
+}

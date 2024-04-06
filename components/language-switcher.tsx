@@ -1,13 +1,14 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
+import i18nConfig from "@/i18nConfig";
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-// import { useRouter } from "next/router";
-// import en from "../../locales/en";
-// import sr from "../../locales/sr";
-// import styles from "./LanguageSwitcher.module.css";
-import { v4 as uuidv4 } from "uuid";
-import { useState } from "react";
+import { SelectChangeEvent } from "@mui/material/Select";
 
 interface LanguageSwitcherProps {
   ariaId: string;
@@ -15,30 +16,47 @@ interface LanguageSwitcherProps {
 }
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ ariaId, id }) => {
-  const [generatedId] = useState(`language-switcher-${id}-${uuidv4()}`);
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
+  const router = useRouter();
+  const currentPathname = usePathname();
 
-  //   const router = useRouter();
-  //   const { locale } = router;
-  //   const t = locale === "en" ? en : sr;
+  const handleChange = (e: SelectChangeEvent<string>) => {
+    const newLocale = e.target.value;
 
-  //   const changeLanguage = (e: { target: { value: any } }) => {
-  //     const locale = e.target.value;
-  //     router.push(router.pathname, router.asPath, { locale });
-  //   };
+    // set cookie for next-i18n-router
+    const days = 30;
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `NEXT_LOCALE=${newLocale};expires=${date.toUTCString()};path=/`;
+
+    // redirect to the new locale path
+    if (
+      currentLocale === i18nConfig.defaultLocale &&
+      !i18nConfig.prefixDefault
+    ) {
+      router.push("/" + newLocale + currentPathname);
+    } else {
+      router.push(
+        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
+      );
+    }
+
+    router.refresh();
+  };
 
   return (
-    <div id={generatedId}>
+    <div id={id}>
       <Box sx={{ minWidth: 50 }} className="relative">
         <FormControl fullWidth>
-          {/* <div className={`${styles.inputWrapper} relative group`}> */}
-          <div className={`relative group`}>
+          <div className="inputWrapper relative group">
             <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-goldBg transition-all group-hover:w-full"></span>
             <Select
-              id={generatedId + "selectId"}
+              id={id + "selectId"}
               aria-labelledby={ariaId}
-              //   value={locale}
-              inputProps={{ id: generatedId + "inputId" }}
-              //   onChange={changeLanguage}
+              value={currentLocale}
+              inputProps={{ id: id + "inputId" }}
+              onChange={handleChange}
               variant="standard"
               className="text-goldBg !important"
             >

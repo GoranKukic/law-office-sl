@@ -1,17 +1,9 @@
-import React from "react";
+// import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-scroll/modules";
 import { links } from "@/lib/data";
 import LanguageSwitcher from "./language-switcher";
-// import CtaButton from "../UI/CtaButton";
-// import NavLinksMobile from "./NavLinksMobile";
-// import { useRouter } from "next/router";
-// import en from "../../locales/en";
-// import sr from "../../locales/sr";
-// import dynamic from "next/dynamic";
-
-// const LanguageSwitcher = dynamic(() => import("../Navbar/LanguageSwitcher"), {
-//   ssr: false,
-// });
+import { useTranslation } from "react-i18next";
 
 type MobileNavProps = {
   open: boolean;
@@ -19,11 +11,25 @@ type MobileNavProps = {
 };
 
 export default function MobileNav({ open, setOpen }: MobileNavProps) {
-  //   const router = useRouter();
-  //   const { locale } = router;
-  //   const t = locale === "en" ? en : sr;
+  const { t } = useTranslation();
 
-  // const uniqueId = `language-switcher-${new Date().getTime()}`;
+  // Hook to track window size changes
+  useEffect(() => {
+    const handleResize = () => {
+      // Close the mobile menu if the window is wider than 1023px
+      if (window.innerWidth > 1023 && open) {
+        setOpen(false);
+      }
+    };
+
+    // Add event listener for window size changes
+    window.addEventListener("resize", handleResize);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [open, setOpen]);
 
   return (
     <div
@@ -35,38 +41,46 @@ export default function MobileNav({ open, setOpen }: MobileNavProps) {
       }}
     >
       <div className="flex flex-col">
-        {links.map((link, index) => (
-          <Link
-            key={index}
-            // href="#"
-            to={link.hash}
-            className="my-4 text-gray"
-            smooth={true}
-            offset={-80}
-            duration={500}
-            // onClick={onClick}
-          >
-            <p className="relative group cursor-pointer text-[18px]">
-              <span>{link.name}</span>
-              <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-goldBg transition-all group-hover:w-full"></span>
-            </p>
-          </Link>
-        ))}
-
-        <Link
-          href="#"
-          to="contact"
-          smooth={true}
-          offset={-290}
-          duration={500}
-          onClick={() =>
-            setTimeout(() => {
-              setOpen(!open);
-            }, 100)
-          }
-        >
-          {/* <CtaButton /> */}
-        </Link>
+        {links.map((link, index) =>
+          link.name !== "ctaButton" ? (
+            <Link
+              key={index}
+              to={link.hash}
+              className="my-4 text-gray"
+              smooth={true}
+              offset={-80}
+              duration={500}
+            >
+              <p className="relative group cursor-pointer text-[18px]">
+                <span>{t(link.name)}</span>
+                <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-goldBg transition-all group-hover:w-full"></span>
+              </p>
+            </Link>
+          ) : (
+            <Link
+              href="#"
+              to="contact"
+              key={link.hash}
+              smooth={true}
+              offset={-290}
+              duration={500}
+              onClick={() =>
+                setTimeout(() => {
+                  setOpen(!open);
+                }, 100)
+              }
+            >
+              <button
+                className="flex justify-center items-center h-[50px] w-[180px] text-black text-[16px] font-['Open Sans'] font-semibold
+            box-border border-2 border-solid border-goldButton rounded-sm leading-[155%] cursor-pointer bg-goldButton 
+            transition-colors duration-700 transform hover:bg-white hover:text-goldButton active:bg-gray"
+                type="button"
+              >
+                <span>{t(link.name)}</span>
+              </button>
+            </Link>
+          )
+        )}
         <div className="flex justify-center items-center  my-4">
           <LanguageSwitcher ariaId="language-switcher-mobile" id="mobile" />
         </div>

@@ -1,25 +1,18 @@
 "use client";
 
-// import React from "react";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import introBg from "@/public/heroBg.jpg";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-// import { useRouter } from "next/router";
-// import en from "@/locales/en";
-// import sr from "@/locales//sr";
+import { useTranslation } from "react-i18next";
 
 export default function Intro() {
   useEffect(() => {
     AOS.init({ duration: 2000, easing: "ease-in-sine" });
   }, []);
 
-  //   const router = useRouter();
-  //   const { locale } = router;
-  //   const t = locale === "en" ? en : sr;
+  const { t } = useTranslation();
 
   return (
     <section
@@ -45,19 +38,16 @@ export default function Intro() {
           className="max-w-[855px] w-full flex flex-col gap-[20px]"
         >
           <h2 className="text-white mb-[10px] uppercase text-[16px] font-semibold ml-0 mr-auto my-0 leading-[155%]">
-            LAW & INSURANCE SPECIALIST
+            {t("heroTitle")}
           </h2>
           <span className="max-w-[855px] w-full">
-            <h2 className="heroHeadline capitalize m-0 w-full text-[#967e44] text-[76px] font-['Prata'] text-justify">
+            <h2 className="heroHeadline capitalize m-0 w-full text-goldBg text-[76px] font-['Prata'] text-justify">
               Audiatur et altera pars
             </h2>
           </span>
           <span className="max-w-[570px] ml-auto mr-0">
-            <p className="text-white text-[16px] font-normal text-justify">
-              With `Let the other side be heard` as our guiding principle, we
-              approaches each case with a commitment to fairness, thoroughness,
-              and dedication to legal representation. Contact us today to learn
-              how we can assist you with your legal needs
+            <p className="text-white text-[16px] font-normal text-justify leading-[155%]">
+              {t("heroDescription")}
             </p>
           </span>
         </div>
