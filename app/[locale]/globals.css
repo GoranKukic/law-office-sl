@@ -4,6 +4,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Globals */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  /* overflow-x: hidden; */
+  overflow-scrolling: touch;
+
+  padding: 0 !important;
+  margin: 0;
+  position: relative;
+  overflow: visible !important;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+body {
+  overflow-y: visible;
+  overflow-x: hidden;
+  position: relative;
+  height: unset;
+}
+
+.text-goldBg {
+  color: #967e44;
+}
+
 /* Language Switcher */
 
 .inputWrapper div:before {
@@ -47,4 +80,25 @@
     text-align: center;
     font-size: 52px;
   }
+}
+
+/* About Us */
+
+.bg-aboutUs-gradient {
+  background-image: linear-gradient(to right, white 50%, #967e44 50%);
+}
+
+.aboutUsImg :global {
+  @apply opacity-30 sm:opacity-100 !important;
+}
+
+/* Why We */
+
+.paralaxContainer {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: -1;
 }

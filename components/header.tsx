@@ -3,24 +3,12 @@
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
-import LogoImg from "@/public/logo2.png";
+import LogoImg from "@/public/images/logo2.png";
 import { links } from "@/lib/data";
 import { Link } from "react-scroll/modules";
-// import CtaButton from "../UI/CtaButton";
-// import Logo from "../UI/Logo";
-// import NavLinks from "./NavLinks";
 import MobileNav from "./nav-mobile";
-// import { useRouter } from "next/router";
-// import en from "../../locales/en";
-// import sr from "../../locales/sr";
-// import dynamic from "next/dynamic";
-
 import LanguageSwitcher from "./language-switcher";
 import NavDesktop from "./nav-desktop";
-
-// const LanguageSwitcher = dynamic(() => import("../Navbar/LanguageSwitcher"), {
-//   ssr: false,
-// });
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -85,7 +73,7 @@ export default function Header() {
         {/* Language switcher */}
         <div className="justify-center items-center hidden lg:flex">
           {/* <LanguageSwitcher ariaId="language-switcher" id="navbar" /> */}
-          <LanguageSwitcher  />
+          <LanguageSwitcher ariaId="language-switcher" id="landscape" />
         </div>
 
         {/* hamburger button */}

@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import introBg from "@/public/heroBg.jpg";
+import introBg from "@/public/images/heroBg.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
@@ -16,13 +16,13 @@ export default function Intro() {
 
   return (
     <section
-      id="hero"
-      className="hero-gradient h-[100vh] w-[100vw] flex flex-row justify-center items-center overflow-hidden relative"
+      id="intro"
+      className="hero-gradient h-[100vh] w-100 flex flex-row justify-center items-center overflow-hidden relative"
     >
       <div className="absolute z-10 h-full w-full bg-gradient-to-b from-black/75 to-black/75 md:text-justify text-center lg:text-justify lg:text-52" />
       <Image
         src={introBg}
-        alt="Hero background"
+        alt="Intro background"
         fill
         priority
         className=" object-cover object-top h-full"
