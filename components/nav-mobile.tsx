@@ -71,8 +71,8 @@ export default function MobileNav({ open, setOpen }: MobileNavProps) {
               }
             >
               <button
-                className="flex justify-center items-center h-[50px] w-[180px] text-black text-[16px] font-['Open Sans'] font-semibold
-            box-border border-2 border-solid border-goldButton rounded-sm leading-[155%] cursor-pointer bg-goldButton 
+                className="flex justify-center items-center h-[50px] w-[180px] text-black text-[16px] font-sans font-semibold
+            box-border border-2 border-solid border-goldButton rounded-sm leading-[100%] cursor-pointer bg-goldButton 
             transition-colors duration-700 transform hover:bg-white hover:text-goldButton active:bg-gray"
                 type="button"
               >

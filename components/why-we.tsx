@@ -7,9 +7,9 @@ import Image from "next/image";
 import WhyWeBg from "@/public/images/whyWeBg.jpg";
 import Title from "./title";
 import Headline from "./headline";
-import MoneySaveImg from "@/public/images/money.png";
-import TimeImg from "@/public/images/time.png";
-import StressImg from "@/public/images/stress.png";
+import { GiMoneyStack } from "react-icons/gi";
+import { GiBackwardTime } from "react-icons/gi";
+import { BsCloudLightningRain } from "react-icons/bs";
 
 const WhyWe = () => {
   const { t } = useTranslation();
@@ -41,74 +41,53 @@ const WhyWe = () => {
           className="mb-[40px] text-center"
         ></Headline>
         <div className="flex flex-row flex-wrap justify-center gap-[30px] z-20">
-          {/* Benefit money*/}
-
           <div
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
           >
             <div className="max-w-[360px] px-[34px] pt-[60px] pb-[55px] bg-white border-t-[6px] border-solid border-goldBg flex flex-col gap-[33px] items-center justify-center text-center cursor-pointer overflow-hidden transform hover:-translate-y-4 duration-500 ease-in-out">
-              <Image
-                src={MoneySaveImg}
-                alt="Piggybank icon"
-                className="max-h-[40px] h-full max-w-[40px] w-full"
-              />
+              <GiMoneyStack className="max-h-[40px] h-full max-w-[40px] w-full" />
               <span className='text-[20px] md:text-[24px] font-normal text-goldBg font-["Prata"] leadeing-[155%]'>
                 {t("whyWeCard1Headline")}
               </span>
-              <p className={"text-center text-gray"}>
+              <p className="text-center text-gray font-sans">
                 {t("whyWeCard1Content")}
               </p>
             </div>
           </div>
-
-          {/* Benefit time*/}
-
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
           >
             <div className="max-w-[360px] px-[34px] pt-[60px] pb-[55px] bg-white border-t-[6px] border-solid border-goldBg flex flex-col gap-[33px] items-center justify-center text-center cursor-pointer overflow-hidden transform hover:-translate-y-4 duration-500 ease-in-out">
-              <Image
-                src={TimeImg}
-                alt="Piggybank icon"
-                className="max-h-[40px] h-full max-w-[40px] w-full"
-              />
+              <GiBackwardTime className="max-h-[40px] h-full max-w-[40px] w-full" />
               <span className='text-[20px] md:text-[24px] font-normal text-goldBg font-["Prata"] leadeing-[155%]'>
                 {t("whyWeCard2Headline")}
               </span>
-              <p className={"text-center text-gray"}>
+              <p className="text-center text-gray font-sans">
                 {t("whyWeCard2Content")}
               </p>
             </div>
           </div>
-
-          {/* Benefit stress*/}
-
           <div
             data-aos="fade-left"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
           >
             <div className="max-w-[360px] px-[34px] pt-[60px] pb-[55px] bg-white border-t-[6px] border-solid border-goldBg flex flex-col gap-[33px] items-center justify-center text-center cursor-pointer overflow-hidden transform hover:-translate-y-4 duration-500 ease-in-out">
-              <Image
-                src={StressImg}
-                alt="Piggybank icon"
-                className="max-h-[40px] h-full max-w-[40px] w-full"
-              />
+              <BsCloudLightningRain className="max-h-[40px] h-full max-w-[40px] w-full p-[3px]" />
               <span className='text-[20px] md:text-[24px] font-normal text-goldBg font-["Prata"] leadeing-[155%]'>
                 {t("whyWeCard3Headline")}
               </span>
-              <p className={"text-center text-gray"}>
+              <p className="text-center text-gray font-sans">
                 {t("whyWeCard3Content")}
               </p>
             </div>
           </div>
         </div>
       </div>
-      {/* </Parallax> */}
     </div>
   );
 };

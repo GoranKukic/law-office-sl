@@ -3,7 +3,8 @@
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
-import LogoImg from "@/public/images/logo2.png";
+import LogoImg from "@/public/images/logo-text-v1.png";
+// import LogoImg from "@/public/images/logo-text-v2.png";
 import { links } from "@/lib/data";
 import { Link } from "react-scroll/modules";
 import MobileNav from "./nav-mobile";

@@ -20,7 +20,15 @@ export default function NavDesktop({ navbar, setNavbar }: DesktopNavProps) {
     >
       {links.map((link, index) =>
         link.name !== "ctaButton" ? (
-          <Link key={index} to={link.hash}>
+          <Link
+            href="#"
+            key={index}
+            to={link.hash}
+            activeClass="active"
+            smooth={true}
+            offset={-80}
+            duration={500}
+          >
             <p className="relative group cursor-pointer">
               <span>{t(link.name)}</span>
               <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-goldBg transition-all group-hover:w-full"></span>
@@ -37,8 +45,8 @@ export default function NavDesktop({ navbar, setNavbar }: DesktopNavProps) {
               duration={500}
             >
               <button
-                className={`flex justify-center items-center h-[50px] w-[180px] text-black text-[16px] font-['Open Sans'] font-semibold
-            box-border border-2 border-solid border-goldButton rounded-sm leading-[155%] cursor-pointer bg-goldButton 
+                className={`flex justify-center items-center h-[50px] w-[180px] text-black text-[16px] font-sans font-semibold
+            box-border border-2 border-solid border-goldButton rounded-sm leading-[100%] cursor-pointer bg-goldButton 
             transition-colors duration-700 transform hover:bg-white hover:text-goldButton active:bg-gray ${
               navbar ? "text-white" : "text-black"
             }`}

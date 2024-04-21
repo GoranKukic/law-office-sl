@@ -1,13 +1,16 @@
 import initTranslations from "../i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
-import AboutUs from "@/components/about-us";
 
 const i18nNamespaces = ["home"];
 
 import Header from "@/components/header";
 import Intro from "@/components/intro";
-import OurServices from "@/components/our-services";
+import AboutUs from "@/components/about-us";
+// import OurServices from "@/components/our-services";
 import WhyWe from "@/components/why-we";
+import Contact from "@/components/contact";
+import Location from "@/components/location";
+import Footer from "@/components/footer";
 
 async function Home({ params: { locale } }: { params: { locale: string } }) {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
@@ -23,6 +26,9 @@ async function Home({ params: { locale } }: { params: { locale: string } }) {
         <AboutUs />
         {/* <OurServices /> */}
         <WhyWe />
+        <Contact />
+        <Location />
+        <Footer />
       </main>
     </TranslationsProvider>
   );

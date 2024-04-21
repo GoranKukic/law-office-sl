@@ -46,7 +46,7 @@ export default function Intro() {
             </h2>
           </span>
           <span className="max-w-[570px] ml-auto mr-0">
-            <p className="text-white text-[16px] font-normal text-justify leading-[155%]">
+            <p className="text-white text-[16px] font-normal text-justify leading-[155%] font-sans">
               {t("heroDescription")}
             </p>
           </span>

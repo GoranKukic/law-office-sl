@@ -44,7 +44,7 @@ const AboutUs = () => {
             headline={t("aboutUsHeadline")}
             className={"text-black max-w-[350px] mb-[20px]"}
           />
-          <p className="mb-[16px] text-gray">
+          <p className="mb-[16px] text-gray font-sans">
             Morbi quis commodo quam. Nullam sodales mauris eget mi consectetur
             imperdiet. Nam elementum placerat tortor, quis commodo sapien
             convallis a. Vivamus arcu ante, pharetra ac sem quis, ultricies
@@ -52,7 +52,7 @@ const AboutUs = () => {
             elementum urna ut lacinia finibus. Duis tristique rhoncus mi non
             posuere.
           </p>
-          <p className="text-gray">
+          <p className="text-gray font-sans">
             Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
             posuere cubilia curae; Morbi nec pharetra dui. Nullam dapibus lectus
             ut mauris scelerisque, ac mollis erat egestas. Praesent vitae justo
