@@ -3,6 +3,8 @@ import TranslationsProvider from "@/components/TranslationsProvider";
 
 const i18nNamespaces = ["home"];
 
+import { Toaster } from "react-hot-toast";
+
 import Header from "@/components/header";
 import Intro from "@/components/intro";
 import AboutUs from "@/components/about-us";
@@ -22,6 +24,17 @@ async function Home({ params: { locale } }: { params: { locale: string } }) {
     >
       <main className="flex flex-col">
         <Header />
+        <Toaster
+          position="top-center"
+          reverseOrder={true}
+          toastOptions={{
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          }}
+        />
         <Intro />
         <AboutUs />
         {/* <OurServices /> */}

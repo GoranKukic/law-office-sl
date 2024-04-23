@@ -5,6 +5,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Title from "./title";
 import Headline from "./headline";
+import { sendEmail } from "@/actions/sendEmail";
+import SubmitBtn from "./submit-btn";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -30,26 +33,26 @@ const Contact = () => {
           <Headline headline={t("ctaHeadline")} className="mb-[40px]" />
         </div>
         <form
-          action="https://formspree.io/f/mayzoekz"
-          method="POST"
+          action={async (formData) => {
+            const { data, error } = await sendEmail(formData);
+            if (error) {
+              toast.error(error);
+              return;
+            }
+
+            toast.success(t("contact-emailSuccess"));
+          }}
+          // method="POST"
           className="max-w-[800px] w-full mx-auto"
         >
           <ul>
-            {/* <li className="mb-[22px]">
-              <input
-                className='border border-grayBackground w-full p-[22px] leading-tight focus:outline-none focus:shadow-outline"'
-                id="name"
-                type="text"
-                placeholder={t("ctaFormName")}
-                required
-              />
-            </li> */}
             <li className="mb-[22px]">
               <input
                 className='border border-grayBackground w-full p-[22px] leading-tight focus:outline-none focus:shadow-outline"'
                 type="email"
                 id="mail"
-                name="email"
+                name="senderEmail"
+                maxLength={50}
                 placeholder={t("ctaFormEmail")}
                 required
               />
@@ -59,20 +62,13 @@ const Contact = () => {
                 required
                 name="message"
                 rows={9}
+                maxLength={500}
                 placeholder={t("ctaFormMessage")}
                 className="border border-grayBackground w-full p-[22px] leading-tight focus:outline-none focus:shadow-outline"
               />
             </li>
             <li>
-              <button
-                className="flex justify-center items-center h-[50px] w-[180px] mx-auto text-white text-[16px] font-sans font-semibold
-            box-border border-2 border-solid border-goldBg rounded-sm leading-[155%] cursor-pointer bg-goldBg 
-            transition-colors duration-700 transform hover:bg-white hover:text-goldBg active:bg-gray"
-                type="submit"
-                value="Submit"
-              >
-                {t("ctaFormButton")}
-              </button>
+              <SubmitBtn />
             </li>
           </ul>
         </form>
