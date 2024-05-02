@@ -39,7 +39,7 @@ const OurServices = () => {
   }, []);
 
   return (
-    <section id="our-services" className="w-full bg-lightBlack">
+    <div id="our-services" className="w-full bg-lightBlack">
       <div>
         <div
           className={`container bg-lightBlack flex flex-nowrap items-end w-[500%] h-[100vh] relative mx-auto`}
@@ -61,7 +61,7 @@ const OurServices = () => {
             </div>
           </div>
           {/* Contract Law */}
-          <section className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
+          <div className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
             <div className="flex flex-col justify-center max-w-[932px] w-full h-full px-4">
               <div className="relative max-h-[45%] mp:max-h-[55%] h-full max-w-[500px] w-full mr-0 ml-auto">
                 <Image
@@ -94,9 +94,9 @@ const OurServices = () => {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
           {/* Indemnity Law */}
-          <section className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
+          <div className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
             <div className="flex flex-col justify-center max-w-[932px] w-full h-full px-4">
               <div
                 className={`relative max-h-[45%] mp:max-h-[55%] h-full max-w-[500px] w-full mr-0 ml-auto`}
@@ -131,9 +131,9 @@ const OurServices = () => {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
           {/* Family Law */}
-          <section className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
+          <div className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
             <div className="flex flex-col justify-center max-w-[932px] w-full h-full px-4">
               <div className="relative max-h-[45%] mp:max-h-[55%] h-full max-w-[500px] w-full mr-0 ml-auto">
                 <Image
@@ -166,9 +166,9 @@ const OurServices = () => {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
           {/* Penalty Law */}
-          <section className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
+          <div className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
             <div className="flex flex-col justify-center max-w-[932px] w-full h-full px-4">
               <div className="relative max-h-[45%] mp:max-h-[55%] h-full max-w-[500px] w-full mr-0 ml-auto">
                 <Image
@@ -201,9 +201,9 @@ const OurServices = () => {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
           {/* Other Law Areas Law */}
-          <section className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
+          <div className="panel flex relative justify-center items-center text-center text-white m-0 p-0 min-w-[100vw] cont:min-w-[100%] w-full h-[calc(100%-150px)] mp:h-[calc(100%-180px)]">
             <div className="flex flex-col justify-center max-w-[932px] w-full h-full px-4">
               <div className="relative max-h-[45%] mp:max-h-[55%] h-full max-w-[500px] w-full mr-0 ml-auto">
                 <Image
@@ -236,10 +236,10 @@ const OurServices = () => {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

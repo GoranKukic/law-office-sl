@@ -9,6 +9,7 @@ import Header from "@/components/header";
 import Intro from "@/components/intro";
 import AboutUs from "@/components/about-us";
 // import OurServices from "@/components/our-services";
+import OurServices from "@/components/our-serviess";
 import WhyWe from "@/components/why-we";
 import Contact from "@/components/contact";
 import Location from "@/components/location";
@@ -37,7 +38,7 @@ async function Home({ params: { locale } }: { params: { locale: string } }) {
         />
         <Intro />
         <AboutUs />
-        {/* <OurServices /> */}
+        <OurServices />
         <WhyWe />
         <Contact />
         <Location />
