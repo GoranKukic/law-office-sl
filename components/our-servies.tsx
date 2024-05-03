@@ -17,7 +17,7 @@ const OurServices = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative bg-lightBlack">
+    <div id="our-services" className="relative bg-lightBlack">
       <div
         className={`pt-[110px] absolute top-[0px] left-0 flex w-[100vw] cont:w-[100%] justify-center items-center`}
       >

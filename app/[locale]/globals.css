@@ -87,8 +87,8 @@ body {
   background-image: linear-gradient(to right, white 50%, #967e44 50%);
 }
 
-.aboutUsImg :global {
-  @apply opacity-30 sm:opacity-100 !important;
+.aboutUsImg {
+  @apply opacity-30 lg:opacity-100 !important;
 }
 
 /* Why We */

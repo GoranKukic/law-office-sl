@@ -1,4 +1,3 @@
-// import React from "react";
 import React, { useEffect } from "react";
 import { Link } from "react-scroll/modules";
 import { links } from "@/lib/data";
@@ -44,12 +43,18 @@ export default function MobileNav({ open, setOpen }: MobileNavProps) {
         {links.map((link, index) =>
           link.name !== "ctaButton" ? (
             <Link
+              href="#"
               key={index}
               to={link.hash}
               className="my-4 text-gray"
               smooth={true}
               offset={-80}
               duration={500}
+              onClick={() =>
+                setTimeout(() => {
+                  setOpen(!open);
+                }, 100)
+              }
             >
               <p className="relative group cursor-pointer text-[18px]">
                 <span>{t(link.name)}</span>

@@ -4,7 +4,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import Image from "next/image";
-import aboutUsBg from "@/public/images/aboutUsBg.png";
+// import aboutUsBg from "@/public/images/aboutUsBg.png";
+import aboutUsBg from "@/public/images/lady-justice.png";
 import Title from "./title";
 import Headline from "./headline";
 
@@ -16,9 +17,9 @@ const AboutUs = () => {
       id="about-us"
       className="min-h-[650px] bg-aboutUs-gradient flex justify-center items-center flex-col overflow-hidden"
     >
-      <div className=" relative bg-white h-full max-w-[1172px] w-full mx-auto my-[0] px-4 z-20">
+      <div className="relative bg-white h-full max-w-[1172px] w-full mx-auto my-[0] px-4 z-20">
         <div
-          className="aboutUsImg absolute -right-[230px] -bottom-[2px] w-[600px] z-40"
+          className="aboutUsImg absolute -right-[270px] -bottom-[2px] w-[600px] z-40"
           data-aos="fade-left"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
@@ -30,7 +31,7 @@ const AboutUs = () => {
                    (min-width: 1200px) 33vw,
                   100vw"
             placeholder="blur"
-            blurDataURL="@/public/images/aboutUsBg.png"
+            blurDataURL="@/public/images/lady-justice.png"
           />
         </div>
         <div
