@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import i18nConfig from "@/i18nConfig";
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
+import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { SelectChangeEvent } from "@mui/material/Select";
@@ -50,6 +51,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ ariaId, id }) => {
       <Box sx={{ minWidth: 50 }} className="relative">
         <FormControl fullWidth>
           <div className="inputWrapper relative group">
+            <InputLabel id={ariaId}></InputLabel>
             <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-goldBg transition-all group-hover:w-full"></span>
             <Select
               id={id + "selectId"}

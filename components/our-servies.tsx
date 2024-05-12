@@ -74,7 +74,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative min-w-[80vw] w-full overflow-hidden pt-10"
+      className="group relative min-w-[80vw] w-full overflow-hidden pt-[7.5rem]"
     >
       <div className="flex flex-col justify-center max-w-[932px] w-full h-full px-4">
         <div className="relative max-h-[45%] mp:max-h-[55%] h-full max-w-[500px] w-full mr-0 ml-auto">

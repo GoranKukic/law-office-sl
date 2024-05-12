@@ -19,7 +19,7 @@ const AboutUs = () => {
     >
       <div className="relative bg-white h-full max-w-[1172px] w-full mx-auto my-[0] px-4 z-20">
         <div
-          className="aboutUsImg absolute -right-[270px] -bottom-[2px] w-[600px] z-40"
+          className="aboutUsImg absolute -right-[247px] -bottom-[2px] w-[577px] z-40"
           data-aos="fade-left"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
